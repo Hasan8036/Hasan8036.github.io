@@ -1,0 +1,2 @@
+packaging==26.3
+python-dotenv==1.2.1
