@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hasan Malik — Founder, Analytics & Strategy</title>
+<title>Hasan — Founder, Analytics & Strategy</title>
 <meta name="description" content="Founder of Safarnama and Fynzi. Master of Management Analytics at McGill. Building at the intersection of business strategy and technology." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,25 +179,31 @@
     border-radius:100px;padding:9px 18px;color:var(--ash);transition:all .35s var(--ease);}
   .interest-row b:hover{color:var(--void);background:var(--signal);border-color:var(--signal);}
 
-  /* ---------- GALLERY ---------- */
-  .gal{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:64px;}
-  .gal figure{overflow:hidden;position:relative;border-radius:2px;}
-  .gal figure img{transition:transform 1.5s var(--ease),filter .8s;filter:grayscale(1);}
-  .gal figure:hover img{transform:scale(1.06);filter:grayscale(0);}
-  .gal figcaption{position:absolute;left:14px;bottom:12px;z-index:2;
-    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--snow);opacity:0;transform:translateY(8px);
-    transition:all .5s var(--ease);text-shadow:0 1px 12px rgba(0,0,0,.9);}
-  .gal figure:hover figcaption{opacity:1;transform:translateY(0);}
-  .g-a{grid-column:span 7;aspect-ratio:4/3;}
-  .g-b{grid-column:span 5;aspect-ratio:3/4;}
-  .g-c{grid-column:span 4;aspect-ratio:3/4;}
-  .g-d{grid-column:span 4;aspect-ratio:3/4;}
-  .g-e{grid-column:span 4;aspect-ratio:3/4;}
-  .g-f{grid-column:span 12;aspect-ratio:16/7;}
-  @media(max-width:760px){
-    .g-a,.g-b,.g-c,.g-d,.g-e,.g-f{grid-column:span 12;aspect-ratio:4/3;}
-  }
+  /* ---------- GLOBE ---------- */
+  .globe-block{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;
+    margin-top:64px;align-items:center;}
+  @media(max-width:900px){.globe-block{grid-template-columns:1fr;gap:40px;}}
+  .globe-stage{position:relative;width:100%;aspect-ratio:1/1;max-width:560px;margin:0 auto;}
+  #globe{width:100%;height:100%;display:block;}
+  .globe-hud{position:absolute;left:0;bottom:4%;pointer-events:none;}
+  .hud-idx{color:var(--ash);margin-bottom:6px;}
+  .hud-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+    font-size:clamp(26px,3.4vw,44px);letter-spacing:-0.03em;line-height:1;
+    color:var(--snow);}
+  .hud-city{color:var(--signal);margin-top:7px;}
+  .globe-list ul{list-style:none;}
+  .globe-list li{display:flex;align-items:center;gap:12px;
+    padding:11px 0;border-bottom:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;
+    color:var(--ash);transition:color .45s var(--ease),padding-left .45s var(--ease);}
+  .globe-list li .pip{width:5px;height:5px;border-radius:50%;background:var(--line);
+    flex-shrink:0;transition:all .45s var(--ease);}
+  .globe-list li .num{color:var(--line);font-size:10px;margin-left:auto;transition:color .45s;}
+  .globe-list li.on{color:var(--snow);padding-left:10px;}
+  .globe-list li.on .pip{background:var(--signal);box-shadow:0 0 0 4px rgba(255,91,36,.18);}
+  .globe-list li.on .num{color:var(--signal);}
+  .globe-list li.seen{color:#5F6672;}
+  .globe-list li.seen .pip{background:#3A4250;}
 
   /* ---------- SUMMIT BANNER ---------- */
   #summit{padding:150px 0;border-top:1px solid var(--line);position:relative;overflow:hidden;}
@@ -258,7 +264,7 @@
   <section id="hero">
     <div class="wrap">
       <div class="hero-meta mono">
-        <span>Montréal, QC &nbsp;·&nbsp; MMA McGill Candidate</span>
+        <span>Montréal, QC &nbsp;·&nbsp; from Attock, PK</span>
         <span>Currently building <b>Fynzi</b></span>
       </div>
       <h1 class="hero-name display">
@@ -401,38 +407,27 @@
     <div class="wrap">
       <div class="sec-label mono">Off the clock</div>
       <p class="about-lead fade" style="max-width:20ch;">
-        Ten countries down. <em>Still counting.</em>
+        Twelve countries down. <em>Still counting.</em>
       </p>
       <div class="interest-row fade">
         <b>Cricket</b><b>Football</b><b>Tennis</b><b>Running</b><b>Biking</b>
         <b>History</b><b>Crypto</b><b>International relations</b>
       </div>
 
-      <div class="gal">
-        <figure class="g-a fade">
-          <img src="images/running.jpg" alt="Around the Bay 30K finish, Hamilton" />
-          <figcaption>Around the Bay 30K — Hamilton, ON</figcaption>
-        </figure>
-        <figure class="g-b fade">
-          <img src="images/italy-vineyard.jpg" alt="Vineyard fortress, Italy" />
-          <figcaption>Vineyards — Italy</figcaption>
-        </figure>
-        <figure class="g-c fade">
-          <img src="images/nyc-central-park.jpg" alt="Central Park, New York" />
-          <figcaption>Central Park — New York</figcaption>
-        </figure>
-        <figure class="g-d fade">
-          <img src="images/milan-castle.jpg" alt="Castello Sforzesco, Milan" />
-          <figcaption>Castello Sforzesco — Milan</figcaption>
-        </figure>
-        <figure class="g-e fade">
-          <img src="images/nyc-times-square.jpg" alt="Times Square, New York" />
-          <figcaption>Times Square — New York</figcaption>
-        </figure>
-        <figure class="g-f fade">
-          <img src="images/london-thames.jpg" alt="The City from the Thames, London" />
-          <figcaption>The City — London</figcaption>
-        </figure>
+      <!-- GLOBE -->
+      <div class="globe-block fade">
+        <div class="globe-stage">
+          <canvas id="globe"></canvas>
+          <div class="globe-hud">
+            <div class="hud-idx mono" id="hudIdx">01 / 12</div>
+            <div class="hud-name" id="hudName">Pakistan</div>
+            <div class="hud-city mono" id="hudCity">Islamabad</div>
+          </div>
+        </div>
+        <div class="globe-list">
+          <div class="sec-label mono" style="margin-bottom:22px;">Passport stamps</div>
+          <ul id="countryList"></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -454,10 +449,10 @@
   <section id="contact">
     <div class="wrap">
       <div class="sec-label mono">Say hello</div>
-      <a href="mailto:hassanmalik170@gmail.com" class="big-mail fade">hassanmalik170@gmail.com</a>
+      <a href="mailto:your.email@example.com" class="big-mail fade">your.email@example.com</a>
       <div class="contact-links mono fade">
-        <a href="https://www.linkedin.com/in/hasan-malik-7b478b21b/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://github.com/Hasan8036" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="#hero">Back to top ↑</a>
       </div>
       <footer class="mono">
@@ -541,6 +536,200 @@
       el.addEventListener('mouseenter',function(){c.classList.add('big');});
       el.addEventListener('mouseleave',function(){c.classList.remove('big');});
     });
+  })();
+
+  /* ---------- GLOBE : 12 countries, travelled in order ---------- */
+  (function(){
+    var cv=document.getElementById('globe');
+    if(!cv) return;
+    var ctx=cv.getContext('2d'), DPR=Math.min(window.devicePixelRatio||1,2);
+
+    var STOPS=[
+      {c:'Pakistan',      city:'Islamabad', lat:33.7,  lon:73.1},
+      {c:'UAE',           city:'Dubai',     lat:25.2,  lon:55.3},
+      {c:'Qatar',         city:'Doha',      lat:25.3,  lon:51.5},
+      {c:'Saudi Arabia',  city:'Riyadh',    lat:24.7,  lon:46.7},
+      {c:'Italy',         city:'Rome',      lat:41.9,  lon:12.5},
+      {c:'Spain',         city:'Madrid',    lat:40.4,  lon:-3.7},
+      {c:'Switzerland',   city:'Bern',      lat:46.9,  lon:7.4},
+      {c:'Netherlands',   city:'Amsterdam', lat:52.4,  lon:4.9},
+      {c:'England',       city:'London',    lat:51.5,  lon:-0.1},
+      {c:'Scotland',      city:'Edinburgh', lat:55.9,  lon:-3.2},
+      {c:'USA',           city:'New York',  lat:40.7,  lon:-74.0},
+      {c:'Canada',        city:'Montréal',  lat:45.5,  lon:-73.6}
+    ];
+
+    /* build the side list */
+    var ul=document.getElementById('countryList');
+    STOPS.forEach(function(s,i){
+      var li=document.createElement('li');
+      li.innerHTML='<span class="pip"></span>'+s.c+
+                   '<span class="num">'+(i<9?'0':'')+(i+1)+'</span>';
+      ul.appendChild(li);
+    });
+    var lis=ul.querySelectorAll('li');
+
+    var hudIdx=document.getElementById('hudIdx'),
+        hudName=document.getElementById('hudName'),
+        hudCity=document.getElementById('hudCity');
+
+    var W=0,H=0,R=0,CX=0,CY=0;
+    function resize(){
+      var r=cv.getBoundingClientRect();
+      W=r.width;H=r.height;
+      cv.width=W*DPR;cv.height=H*DPR;
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      R=Math.min(W,H)*0.40;CX=W/2;CY=H/2;
+    }
+    window.addEventListener('resize',resize);resize();
+
+    var D=Math.PI/180;
+    /* current camera centre */
+    var camLon=STOPS[0].lon, camLat=STOPS[0].lat*0.55;
+
+    function project(lat,lon){
+      var pl=lat*D, pn=(lon-camLon)*D, cl=camLat*D;
+      var cosP=Math.cos(pl), sinP=Math.sin(pl);
+      var cosC=Math.cos(cl), sinC=Math.sin(cl);
+      var z=sinC*sinP+cosC*cosP*Math.cos(pn);
+      var x=cosP*Math.sin(pn);
+      var y=cosC*sinP-sinC*cosP*Math.cos(pn);
+      return {x:CX+R*x, y:CY-R*y, z:z};
+    }
+
+    /* great-circle interpolation */
+    function slerp(a,b,t){
+      var la1=a.lat*D, lo1=a.lon*D, la2=b.lat*D, lo2=b.lon*D;
+      var d=2*Math.asin(Math.sqrt(
+        Math.pow(Math.sin((la1-la2)/2),2)+
+        Math.cos(la1)*Math.cos(la2)*Math.pow(Math.sin((lo1-lo2)/2),2)));
+      if(d===0) return {lat:a.lat,lon:a.lon};
+      var A=Math.sin((1-t)*d)/Math.sin(d), B=Math.sin(t*d)/Math.sin(d);
+      var x=A*Math.cos(la1)*Math.cos(lo1)+B*Math.cos(la2)*Math.cos(lo2);
+      var y=A*Math.cos(la1)*Math.sin(lo1)+B*Math.cos(la2)*Math.sin(lo2);
+      var z=A*Math.sin(la1)+B*Math.sin(la2);
+      return {lat:Math.atan2(z,Math.sqrt(x*x+y*y))/D, lon:Math.atan2(y,x)/D};
+    }
+
+    function drawGraticule(){
+      ctx.lineWidth=1;
+      /* parallels */
+      for(var la=-60;la<=60;la+=30){
+        ctx.beginPath();var started=false;
+        for(var lo=-180;lo<=180;lo+=3){
+          var p=project(la,lo);
+          if(p.z>0){ started?ctx.lineTo(p.x,p.y):(ctx.moveTo(p.x,p.y),started=true); }
+          else started=false;
+        }
+        ctx.strokeStyle='rgba(255,255,255,0.055)';ctx.stroke();
+      }
+      /* meridians */
+      for(var lo2=-180;lo2<180;lo2+=30){
+        ctx.beginPath();var st=false;
+        for(var la2=-90;la2<=90;la2+=3){
+          var q=project(la2,lo2);
+          if(q.z>0){ st?ctx.lineTo(q.x,q.y):(ctx.moveTo(q.x,q.y),st=true); }
+          else st=false;
+        }
+        ctx.strokeStyle='rgba(255,255,255,0.055)';ctx.stroke();
+      }
+    }
+
+    function drawArc(a,b,alpha,active){
+      ctx.beginPath();var st=false;
+      for(var t=0;t<=1.0001;t+=0.02){
+        var p=slerp(a,b,t), s=project(p.lat,p.lon);
+        if(s.z>0){ st?ctx.lineTo(s.x,s.y):(ctx.moveTo(s.x,s.y),st=true); }
+        else st=false;
+      }
+      ctx.strokeStyle= active
+        ? 'rgba(255,91,36,'+alpha+')'
+        : 'rgba(255,91,36,'+(alpha*0.30)+')';
+      ctx.lineWidth= active?1.6:1;
+      ctx.stroke();
+    }
+
+    function dot(lat,lon,r,fill,glow){
+      var p=project(lat,lon);
+      if(p.z<=0) return;
+      var fade=Math.min(1,p.z*2.4);
+      if(glow){
+        ctx.beginPath();ctx.arc(p.x,p.y,r*3.4,0,7);
+        ctx.fillStyle='rgba(255,91,36,'+(0.16*fade)+')';ctx.fill();
+      }
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,7);
+      ctx.fillStyle=fill.replace('ALPHA',fade);ctx.fill();
+    }
+
+    /* ---- timeline ---- */
+    var leg=0, phase='hold', t0=performance.now();
+    var FLY=2300, HOLD=1400;
+
+    function setHUD(i){
+      hudIdx.textContent=(i<9?'0':'')+(i+1)+' / 12';
+      hudName.textContent=STOPS[i].c;
+      hudCity.textContent=STOPS[i].city;
+      lis.forEach(function(li,k){
+        li.classList.toggle('on',k===i);
+        li.classList.toggle('seen',k<i);
+      });
+    }
+    setHUD(0);
+
+    function ease(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+
+    function frame(now){
+      var dt=now-t0;
+      var from=STOPS[leg], to=STOPS[(leg+1)%STOPS.length];
+      var prog=0;
+
+      if(phase==='fly'){
+        prog=Math.min(dt/FLY,1);
+        if(prog>=1){ phase='hold'; t0=now; leg=(leg+1)%STOPS.length; setHUD(leg); }
+      }else{
+        if(dt>HOLD){ phase='fly'; t0=now; }
+      }
+
+      /* camera eases toward the target while flying */
+      var e=ease(prog);
+      var tgt = phase==='fly' ? slerp(from,to,e) : {lat:from.lat,lon:from.lon};
+      var dLon=tgt.lon-camLon;
+      while(dLon>180)dLon-=360; while(dLon<-180)dLon+=360;
+      camLon+=dLon*0.06;
+      camLat+=((tgt.lat*0.55)-camLat)*0.06;
+
+      ctx.clearRect(0,0,W,H);
+
+      /* sphere body */
+      var g=ctx.createRadialGradient(CX-R*0.35,CY-R*0.4,R*0.1,CX,CY,R);
+      g.addColorStop(0,'rgba(28,36,48,0.95)');
+      g.addColorStop(1,'rgba(10,13,18,0.95)');
+      ctx.beginPath();ctx.arc(CX,CY,R,0,7);ctx.fillStyle=g;ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,0.10)';ctx.lineWidth=1;ctx.stroke();
+
+      drawGraticule();
+
+      /* route: completed legs faint, current leg lit */
+      for(var i=0;i<leg;i++) drawArc(STOPS[i],STOPS[i+1],0.85,false);
+      if(phase==='fly'){
+        var head=slerp(from,to,e);
+        drawArc(from,head,0.9,true);
+      }
+
+      /* all stops */
+      STOPS.forEach(function(s,i){
+        dot(s.lat,s.lon,2.2,
+            i<=leg?'rgba(255,91,36,ALPHA)':'rgba(255,255,255,'+0.28+')',
+            false);
+      });
+
+      /* the traveller */
+      var mk = phase==='fly' ? slerp(from,to,e) : {lat:from.lat,lon:from.lon};
+      dot(mk.lat,mk.lon,4.2,'rgba(255,91,36,ALPHA)',true);
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   })();
 
   /* ---------- ALTITUDE GAUGE ---------- */
